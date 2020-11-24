@@ -7,9 +7,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.16'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  color: black;
+  background-color: #9a8c98;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322223b' fill-opacity='0.94'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: white;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
   text-align: center;
@@ -23,8 +23,8 @@ body {
   max-width: 900px;
   padding: 20px 30px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.78);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
 .quote-text {
@@ -44,6 +44,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   font-style: italic;
+  color: rgba(74, 78, 105, 0.9);
 }
 
 .button-container {
@@ -59,10 +60,10 @@ button {
   border: none;
   border-radius: 10px;
   color: #fff;
-  background-color: #333;
+  background-color: #34345b;
   outline: none;
   padding: 0.5rem 1.8rem;
-  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.95);
 }
 
 button:hover {
@@ -83,20 +84,113 @@ button:active {
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #333;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+.item {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.item-1 {
+  background-color: #0f0f1a;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: item-1_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+}
+
+.item-2 {
+  background-color: #333648;
+  top: 0;
+  right: 0;
+  animation: item-2_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+}
+
+.item-3 {
+  background-color: #827380;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  animation: item-3_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+}
+
+.item-4 {
+  background-color: #c9aca6;
+  bottom: 0;
+  left: 0;
+  animation: item-4_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+}
+
+@keyframes item-1_move {
+  0%,
   100% {
-    transform: rotate(360deg);
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, 100px);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  75% {
+    transform: translate(100px, 0);
+  }
+}
+
+@keyframes item-2_move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-100px, 0);
+  }
+  50% {
+    transform: translate(-100px, 100px);
+  }
+  75% {
+    transform: translate(0, 100px);
+  }
+}
+
+@keyframes item-3_move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, -100px);
+  }
+  50% {
+    transform: translate(-100px, -100px);
+  }
+  75% {
+    transform: translate(-100px, 0);
+  }
+}
+
+@keyframes item-4_move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, 0);
+  }
+  50% {
+    transform: translate(100px, -100px);
+  }
+  75% {
+    transform: translate(0, -100px);
   }
 }
 

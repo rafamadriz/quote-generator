@@ -3,7 +3,7 @@ const quoteText = document.querySelector("#quote");
 const authorText = document.querySelector("#author");
 const twitterBtn = document.querySelector("#twitter");
 const newQuoteBtn = document.querySelector("#new-quote");
-const loader = document.querySelector("#loader");
+const loader = document.querySelector(".loader");
 
 // Show Loading
 function showLoadingSpinner() {
@@ -30,8 +30,8 @@ async function getQuote() {
     const data = await response.json();
     //If Author is blank add 'Unknown'
     if (data.quoteAuthor === "") {
-      authorText.innerText = "Unknown";
-    } else authorText.innerText = data.quoteAuthor;
+      authorText.innerText = "~ Unknown ~";
+    } else authorText.innerText = `~ ${data.quoteAuthor} ~`;
     //Reduce font size for long quotes
     if (data.quoteText.length >= 120) {
       quoteText.classList.add("long-quote");
