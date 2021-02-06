@@ -14,4 +14,4 @@ This is a simple training app based on HTML, CSS and Javascript.
 
 Just browse to
 
-<https://madrafa.github.io/quote-generator/>
+<https://rafamadriz.github.io/quote-generator/>
